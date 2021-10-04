@@ -3,14 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Destinatarios</h1>
+    <h1 class="text-center">Destinatarios</h1>
 @stop
 
 @section('content')
 <div class="container">
-    <a href="destinatario/create" class="btn btn-primary mb-3">Añadir destinatario</a>
-    <a href="reserva" class="btn btn-primary mb-3">Reservar dispositivo</a>
-<table id="example" class="table table-striped" style="width:100%">
+    <a href="destinatario/create" class="btn btn-info mb-3">Añadir destinatario</a>
+    <a href="reserva" class="btn btn-info mb-3">Reservar dispositivo</a>
+<table id="example" class="table table-striped text-center" style="width:100%">
     <thead>
         <tr>
             <th>Cedula</th>
@@ -24,7 +24,7 @@
         @foreach ($destinatarios as $destinatario)
         <tr>
             <td>{{ $destinatario-> id}}</td>
-            <td>{{ $destinatario-> nombre}}</td>
+            <td>{{ $destinatario-> nombre_destinatario}}</td>
             <td>{{ $destinatario-> apellido}}</td>
             <td>{{ $destinatario-> email}}</td>
 

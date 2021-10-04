@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Añadir dispositivo</h1>
+    <h1 class="text-center">Añadir dispositivo</h1>
 @stop
 
 @section('content')

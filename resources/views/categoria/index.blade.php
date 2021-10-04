@@ -3,18 +3,19 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Categorias</h1>
+    <h1 class="text-center">Categorias</h1>
 @stop
 
 @section('content')
 <div class="container">
-    <a href="categoria/create" class="btn btn-primary mb-3">Añadir categoria</a>
-<table id="categorias" class="table table-striped" style="width:100%">
+    <a href="categoria/create" class="btn btn-info mb-3">Añadir categoria</a>
+<table id="categorias" class="table table-striped text-center" style="width:100%">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nombre categoria</th>
             <th>Descripcion</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
             <th>Id</th>
             <th>Nombre categoria</th>
             <th>Descripcion</th>
+            <th>Acciones</th>
         </tr>
     </tfoot>
 </table>

@@ -3,14 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dispositivos</h1>
+    <h1 class="text-center">Dispositivos</h1>
 @stop
 
 @section('content')
 <div class="container">
-    <a href="dispositivo/create" class="btn btn-primary mb-3">Añadir dispositivo</a>
-    <a href="categoria/create" class="btn btn-primary mb-3">Añadir categoria</a>
-<table id="example" class="table table-striped" style="width:100%">
+    <a href="dispositivo/create" class="btn btn-info mb-3">Añadir dispositivo</a>
+    <a href="categoria/create" class="btn btn-info mb-3">Añadir categoria</a>
+<table id="example" class="table table-striped text-center" style="width:100%">
     <thead>
         <tr>
             <th>Id</th>
@@ -47,7 +47,7 @@
             <th>Id</th>
             <th>Codigo dispositivo</th>
             <th>Tipo</th>
-            <th>Codigo categoria</th>
+            <th>Categoria</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Acciones</th>

@@ -41,7 +41,7 @@ class DestinatarioController extends Controller
         $destinatario = new Destinatarios();
 
         $destinatario->id = $request->get('id');
-        $destinatario->nombre = $request->get('nombre');
+        $destinatario->nombre_destinatario = $request->get('nombre_destinatario');
         $destinatario->apellido = $request->get('apellido');
         $destinatario->email = $request->get('email');
 
@@ -85,7 +85,7 @@ class DestinatarioController extends Controller
         $destinatario = Destinatarios::find($id);
 
         $destinatario->id = $request->get('id');
-        $destinatario->nombre = $request->get('nombre');
+        $destinatario->nombre_destinatario = $request->get('nombre_destinatario');
         $destinatario->apellido = $request->get('apellido');
         $destinatario->email = $request->get('email');
 

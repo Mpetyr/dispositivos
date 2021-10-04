@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Añadir dispositivo</h1>
+    <h1 class="text-center">Añadir destinatario</h1>
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
-            <input type="text" name="nombre" type="text" class="form-control">
+            <input type="text" name="nombre_destinatario" type="text" class="form-control">
         </div>
     {{--         <div class="mb-3">
             <label for="" class="form-label">Codigo categoria</label>

@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Sistema de gestion</b>',
+    'logo' => '<b>Audiovisuales</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -102,11 +102,11 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
+    'classes_auth_card' => '',
+    'classes_auth_header' => 'bg-gradient-info',
     'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
+    'classes_auth_footer' => 'text-center',
+    'classes_auth_icon' => 'fa-lg text-info',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
@@ -257,35 +257,34 @@ return [
         [
             'text' => 'Dispositivos',
             'url'  => 'dispositivo',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon_color' => 'cyan',
         ],
         [
             'text' => 'Categorias',
             'url'  => 'categoria',
-            'icon' => 'fas fa-fw fa-user',
+            'icon_color' => 'cyan',
+        ],
+        [
+            'text' => 'Reservar',
+            'url'  => 'reserva',
+            'icon_color' => 'cyan',
+        ],
+        [
+            'text' => 'Destinatario',
+            'url'  => 'destinatario',
+            'icon_color' => 'cyan',
+        ],
+        [
+            'text' => 'Dispositivos reservados',
+            'url'  => 'dispositivo_reservado',
+            'icon_color' => 'cyan',
         ],
         ['header' => 'Configuracion de la cuenta'],
         [
             'text' => 'Perfil de usuario',
             'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        ]
     ],
 
     /*

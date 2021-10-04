@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar</h1>
+    <h1 class="text-center">Editar</h1>
 @stop
 
 @section('content')
@@ -19,10 +19,15 @@
         <label for="" class="form-label">Tipo</label>
         <input type="text" id="tipo" name="tipo" type="text" class="form-control" value="{{ $dispositivo-> tipo}}">
     </div>
-{{--         <div class="mb-3">
+    <div class="mb-3">
         <label for="" class="form-label">Codigo categoria</label>
-        <input type="text" id="" name="" type="text" class="form-control" tabindex="3">
-    </div> --}}
+        <select name="categoria" class="form-control">
+            <option value="" selected disabled>Seleccione una categoría...</option>
+            @foreach ($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+            @endforeach
+        </select>
+    </div>
     <div class="mb-3">
         <label for="" class="form-label">Marca</label>
         <input type="text" id="marca" name="marca" type="text" class="form-control" value="{{ $dispositivo-> marca}}">

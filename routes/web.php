@@ -25,6 +25,8 @@ Route::resource('reserva', 'App\Http\Controllers\ReservaController');
 
 Route::resource('destinatario', 'App\Http\Controllers\DestinatarioController');
 
+Route::resource('dispositivo_reservado', 'App\Http\Controllers\DispositivosReservadosController');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

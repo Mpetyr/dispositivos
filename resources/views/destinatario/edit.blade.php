@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editar</h1>
+    <h1 class="text-center">Editar</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Nombre</label>
-        <input type="text" name="nombre" type="text" class="form-control" value="{{ $destinatario-> nombre}}">
+        <input type="text" name="nombre_destinatario" type="text" class="form-control" value="{{ $destinatario-> nombre_destinatario}}">
     </div>
 {{--         <div class="mb-3">
         <label for="" class="form-label">Codigo categoria</label>

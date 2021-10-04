@@ -82,7 +82,8 @@ class dispositivoController extends Controller
     public function edit($id)
     {
         $dispositivo = dispositivos::find($id);
-        return view('dispositivo.edit')->with('dispositivo', $dispositivo);
+        $categorias = Categorias::all();
+        return view('dispositivo.edit')->with('dispositivo', $dispositivo)->with('categorias', $categorias);
     }
 
     /**
@@ -95,11 +96,13 @@ class dispositivoController extends Controller
     public function update(Request $request, $id)
     {
         $dispositivo = dispositivos::find($id);
+        $categorias = Categorias::all();
 
         $dispositivo->codigo = $request->get('codigo');
         $dispositivo->tipo = $request->get('tipo');
         $dispositivo->marca = $request->get('marca');
         $dispositivo->modelo = $request->get('modelo');
+        $dispositivo->id_tipo_audiovisual = $request->get('categoria');
 
         $dispositivo->save();
 

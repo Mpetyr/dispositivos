@@ -24,7 +24,8 @@ class ReservaController extends Controller
         //$dispositivos = dispositivos::join('categorias', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id')->get();
 
         $dispositivos = Categorias::join('dispositivos', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id')->get();
-        return view('reserva.index')->with('dispositivos', $dispositivos);
+        $categorias = dispositivos::join('categorias', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id');
+        return view('reserva.index')->with('dispositivos', $dispositivos)->with('categorias', $categorias);
     }
 
     /**
