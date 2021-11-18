@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\dispositivos;
+use App\Models\Reservas;
+use App\Models\Destinatarios;
 use App\Models\Categorias;
 
-class CategoriaController extends Controller
+class ReservasUsuarioController extends Controller
 {
-
-    public function __construct(){
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +17,12 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categorias::all();
-        return view('categoria.index')->with('categorias', $categorias);
+        $dispositivosReservados = Reservas::join('dispositivos', 'reservas.dispositivos', '=', 'dispositivos.id')
+        ->join('users', 'reservas.email', '=', 'users.id')
+        ->join('sessions', 'reservas.email', '=', 'sessions.user_id')->get();
+        /* 
+        $reservas = dispositivos::join('reservas', 'dispositivos.id', 'reservas.dispositivos');
+ */        return view('reservas_usuario.index')->with('dispositivosReservados', $dispositivosReservados);
     }
 
     /**
@@ -29,7 +32,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('categoria.create');
+        //
     }
 
     /**
@@ -40,14 +43,7 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $categoria = new Categorias();
-
-        $categoria->nombre_categoria = $request->get('nombre_categoria');
-        $categoria->descripcion = $request->get('descripcion');
-
-        $categoria->save();
-
-        return redirect('/categoria');
+        //
     }
 
     /**
@@ -69,8 +65,7 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        $categoria = Categorias::find($id);
-        return view('categoria.edit')->with('categoria', $categoria);
+        //
     }
 
     /**
@@ -82,14 +77,7 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categoria = Categorias::find($id);
-
-        $categoria-> nombre_categoria = $request->get('nombre_categoria');
-        $categoria->descripcion = $request->get('descripcion');
-
-        $categoria->save();
-
-        return redirect('/categoria');
+        //
     }
 
     /**
@@ -100,9 +88,9 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        $categoria = Categorias::find($id);
-        $categoria->delete();
+        $dispositivoReservado = Reservas::find($id);
+        $dispositivoReservado->delete();
 
-        return redirect('/categoria');
+        return redirect('/reservas_usuario');
     }
 }

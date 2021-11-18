@@ -18,8 +18,11 @@ class DispositivosReservadosController extends Controller
     public function index()
     {
         $dispositivosReservados = Reservas::join('dispositivos', 'reservas.dispositivos', '=', 'dispositivos.id')
-        ->join('destinatarios', 'reservas.cedula', '=', 'destinatarios.id')->get();
-        return view('dispositivo_reservado.index')->with('dispositivosReservados', $dispositivosReservados);
+        ->join('users', 'reservas.email', '=', 'users.id')->get();
+        $reservas = Reservas::all();
+        /* 
+        $reservas = dispositivos::join('reservas', 'dispositivos.id', 'reservas.dispositivos');
+ */        return view('dispositivo_reservado.index')->with('dispositivosReservados', $dispositivosReservados)->with('reservas', $reservas);
     }
 
     /**
@@ -85,6 +88,9 @@ class DispositivosReservadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dispositivoReservado = Reservas::find($id);
+        $dispositivoReservado->delete();
+
+        return redirect('/dispositivo_reservado');
     }
 }

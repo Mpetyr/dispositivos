@@ -255,29 +255,34 @@ return [
         ], */
         ['header' => 'Opciones'],
         [
+            'text' => 'Reservar',
+            'url'  => 'reserva',
+            'icon_color' => 'cyan',
+            'can'  => 'reservar.index'
+        ],
+        [
             'text' => 'Dispositivos',
             'url'  => 'dispositivo',
             'icon_color' => 'cyan',
+            'can'  => 'dispositivo.index'
         ],
         [
             'text' => 'Categorias',
             'url'  => 'categoria',
             'icon_color' => 'cyan',
-        ],
-        [
-            'text' => 'Reservar',
-            'url'  => 'reserva',
-            'icon_color' => 'cyan',
-        ],
-        [
-            'text' => 'Destinatario',
-            'url'  => 'destinatario',
-            'icon_color' => 'cyan',
+            'can'  => 'categorias.index'
         ],
         [
             'text' => 'Dispositivos reservados',
             'url'  => 'dispositivo_reservado',
             'icon_color' => 'cyan',
+            'can'  => 'dispositivo_reservado.index'
+        ],
+        [
+            'text' => 'Reservas personales',
+            'url'  => 'reservas_usuario',
+            'icon_color' => 'cyan',
+            'can'  => 'reservar.index'
         ],
         ['header' => 'Configuracion de la cuenta'],
         [

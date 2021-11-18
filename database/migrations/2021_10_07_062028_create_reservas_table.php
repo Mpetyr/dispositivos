@@ -13,8 +13,15 @@ class CreateReservasTable extends Migration
      */
     public function up()
     {
-        Schema::table('reserva', function (Blueprint $table) {
+        Schema::create('reservas', function (Blueprint $table) {
+            $table->id();
+            $table->date('fecha');
+            $table->bigInteger('email')->unsigned();
+            $table->bigInteger('dispositivos')->unsigned();
             $table->timestamps();
+
+            $table->foreign('email')->references('id')->on('users');
+            $table->foreign('dispositivos')->references('id')->on('dispositivos');
         });
     }
 

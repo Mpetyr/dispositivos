@@ -28,8 +28,14 @@
                         <input type="date" id="fecha" name="fecha" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Cedula</label>
-                        <input type="number" id="cedula" name="cedula" type="text" class="form-control">
+                        <label for="" class="form-label">Correo</label>
+                        <br>
+                        <select name="email" id="">
+                            @foreach ($usuario as $user)
+                                <option value="{{ $user->user_id }}">{{$user->email}}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input type="number" id="cedula" name="email" type="text" class="form-control" value="{{ $usuario->id }}"> --}}
                     </div>
     {{--                                 <div class="mb-3">
                         <label for="" class="form-label">Id dispositivo</label>
@@ -71,7 +77,7 @@
             <td>{{ $dispositivo-> id}}</td>
             <td>{{ $dispositivo-> codigo}}</td>
             <td>{{ $dispositivo-> tipo}}</td>
-            <td>{{ $dispositivo-> nombre}}</td>
+            <td>{{ $dispositivo-> nombre_categoria}}</td>
             <td>{{ $dispositivo-> marca}}</td>
             <td>{{ $dispositivo-> modelo}}</td>
             <td>

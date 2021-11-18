@@ -12,7 +12,7 @@
     @csrf
     <div class="mb-3">
         <label for="" class="form-label">Nombre categoria</label>
-        <input type="text" id="nombre" name="nombre" type="text" class="form-control">
+        <input type="text" id="nombre" name="nombre_categoria" type="text" class="form-control">
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Descripcion</label>

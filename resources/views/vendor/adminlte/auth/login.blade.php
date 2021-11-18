@@ -18,7 +18,7 @@
     @php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
 @endif
 
-@section('auth_header', __('adminlte::adminlte.login_message'))
+@section('auth_header', /* __('adminlte::adminlte.login_message') */ 'Inicia sesion con tu usuario')
 
 @section('auth_body')
     <form action="{{ $login_url }}" method="post">
@@ -61,7 +61,7 @@
             <div class="col-7">
                 <div class="icheck-primary">
                     <input type="checkbox" name="remember" id="remember">
-                    <label for="remember">{{ __('adminlte::adminlte.remember_me') }}</label>
+                    <label for="remember">{{-- {{ __('adminlte::adminlte.remember_me') }} --}} Recuerdame</label>
                 </div>
             </div>
             <div class="col-5">

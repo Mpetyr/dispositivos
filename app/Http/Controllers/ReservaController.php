@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\dispositivos;
 use App\Models\Reservas;
 use App\Models\Categorias;
+use App\Models\Sessions;
+use App\Models\User;
+
+/* use Illuminate\Foundation\Auth\User as Authenticatable; */
 
 class ReservaController extends Controller
 {
@@ -24,8 +28,9 @@ class ReservaController extends Controller
         //$dispositivos = dispositivos::join('categorias', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id')->get();
 
         $dispositivos = Categorias::join('dispositivos', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id')->get();
-        $categorias = dispositivos::join('categorias', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id');
-        return view('reserva.index')->with('dispositivos', $dispositivos)->with('categorias', $categorias);
+        $categorias = dispositivos::join('categorias', 'dispositivos.id_tipo_audiovisual', '=', 'categorias.id')->get();
+        $usuario = Sessions::join('users', 'sessions.user_id', '=', 'users.id')->get();
+        return view('reserva.index')->with('dispositivos', $dispositivos)->with('categorias', $categorias)->with('usuario', $usuario);
     }
 
     /**
@@ -50,7 +55,7 @@ class ReservaController extends Controller
 
         $dispositivo->id = $request->get('id'); */
         $reserva->fecha = $request->get('fecha');
-        $reserva->cedula = $request->get('cedula');
+        $reserva->email = $request->get('email');
         $reserva->dispositivos = $request->get('dispositivos');
 
         $reserva->save();

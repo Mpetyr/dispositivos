@@ -24,15 +24,14 @@
     <tbody>
         @foreach ($dispositivosReservados as $dispositivoReservado)
         <tr>
-            {{-- <td>{{ $dispositivoReservado-> id}}</td> --}}
             <td>{{ $dispositivoReservado-> fecha}}</td>
             <td>{{ $dispositivoReservado-> codigo}}</td>
             <td>{{ $dispositivoReservado-> tipo}}</td>
-            <td>{{ $dispositivoReservado-> id}}</td>
+            <td>{{ $dispositivoReservado-> user_id}}</td>
             <td>{{ $dispositivoReservado-> name}}</td>
             <td>{{ $dispositivoReservado-> email}}</td>
-{{--             <td>     
-                <form action="{{ route('dispositivo_reservado.destroy', $dispositivoReservado->id) }}" method="POST">
+   {{--          <td>
+                <form action="{{ route('reservas_usuario.destroy', $dispositivoReservado->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>

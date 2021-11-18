@@ -28,7 +28,7 @@
             <td>{{ $dispositivo-> id}}</td>
             <td>{{ $dispositivo-> codigo}}</td>
             <td>{{ $dispositivo-> tipo}}</td>
-            <td>{{ $dispositivo-> nombre}}</td>
+            <td>{{ $dispositivo-> nombre_categoria}}</td>
             <td>{{ $dispositivo-> marca}}</td>
             <td>{{ $dispositivo-> modelo}}</td>
             <td>
